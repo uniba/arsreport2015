@@ -1,0 +1,26 @@
+ul.ariticles
+  .timeline
+  - if paths.size > 0
+    - paths.each do |path|
+      - yaml = path + '/article.yml'
+      - data = YAML.load_file(yaml)
+      li
+        h2
+          - time = Time.parse( data['time'] )
+          | #{ time.strftime("%p %l:%M") } #{ data['title'] }
+        p.text
+          = truncate data['text'], :length=> 80
+          
+        / = path
+        - link = Pathname(path).relative_path_from(Pathname(source_dir)).to_s
+        / = link_to link.gsub(/^resources/, '')+"/index.html"
+        p.link
+          = link_to link.gsub(/^images/, '')+"/index.html", link.gsub(/^images/, '')+"/index.html", :target=>""
+
+
+
+  - else
+    li
+      h2.no-article
+        | NOW EDITTING
+      

@@ -1,0 +1,31 @@
+---
+  category: article
+---
+
+.wrapper
+  = partial "_templates/goPrev"
+  .left
+    .inner
+      - yaml = path + '/article.yml'
+      - data = YAML.load_file(yaml)
+      h1
+        - time = Time.parse( data['time'] )
+        | #{ time.strftime("%p %l:%M") }
+
+      h2
+        | #{ data['title'] }
+      
+      = simple_format  data['text'], :class=>"text"
+      
+  .right
+    .inner
+      - images = Dir.glob(path+"/images/**.{jpg,png}")
+      - if images.size > 0
+        - images.each do |img|
+          - path_to = Pathname(img)
+          - path_from = Pathname(source_dir + current_page.url)
+          - relativePath = path_to.relative_path_from(path_from).to_s
+          = image_tag relativePath
+      - else
+        p.noImages
+          | NO IMAGES

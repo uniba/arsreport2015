@@ -1,0 +1,62 @@
+html.article
+  height: 100%
+  width: 100%
+  overflow: hidden
+
+  body
+    height: 100%
+
+  .wrapper
+    display: flex
+    width: 100%
+    height: 100%
+    overflow: hidden
+
+
+
+  h1
+    +fontsize(140)
+    margin: -24px -10px
+    font-family: $FAMILY_ShareTech
+
+  h2
+    +fontsize(60)
+    font-family: $FAMILY_ShareTech
+    margin: -20px -4px
+
+  p.text
+    +fontsize(60)
+    font-family: $FAMILY_ShareTech
+    margin: -20px -6px
+    margin-top: 40px
+
+  .left
+    order: 1
+    width: 470px
+    height: 100%
+    overflow-x: hidden
+    overflow-y: auto
+
+
+
+  .right
+    position: relative
+    order: 2
+    flex: auto 1000 1000
+    height: 100%
+    overflow-x: hidden
+    overflow-y: auto
+
+    img
+      width: 100%
+      vertical-align: bottom
+
+    .noImages
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      +fontsize(140)
+      font-family: $FAMILY_ShareTech
+      text-align: right
+    

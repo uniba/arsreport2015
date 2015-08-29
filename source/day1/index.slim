@@ -1,0 +1,10 @@
+---
+  category: days
+---
+
+.wrapper
+  h1
+    | Opening Day
+  = partial "_templates/goTop"
+  - resourcePaths = Dir.glob(source_dir + "/images/day1/**")
+  = partial "_templates/days", :locals => { :paths => resourcePaths }

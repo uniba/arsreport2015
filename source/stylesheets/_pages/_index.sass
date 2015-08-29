@@ -1,0 +1,143 @@
+html.index
+  height: 100%
+
+  body
+    height: 100%
+
+  .whole-wrapper
+    height: 100%
+    overflow: hidden
+
+  .panels
+    position: relative
+    width: 100%
+    height: 100%
+    display: flex
+    flex-wrap: wrap
+    
+    .panel
+      position: relative
+      width: 33.33%
+      height: 33.33%
+      background-position: center center
+      background-size: cover
+    
+
+  
+
+  .main-wrapper
+    position: relative
+    width: 100%
+    height: 70.7777%
+    background-color: white
+
+    &:after
+      content: ''
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      box-shadow: inset 0px 0px 80px 0px rgba(0,0,0,0.4)
+      background-color: rgba(0,0,0,0.2)
+
+    .heading
+      +fontsize(52)
+      position: absolute
+      top: 50%
+      width: 100%
+      color: #fff
+      transform: translateY(-50%)
+      font-family: $FAMILY_ShareTech
+      letter-spacing: 1px
+      z-index: 100
+      h1
+        margin: 0
+        text-align: center
+        text-shadow: 0 0 10px rgba(0,0,0,0.6)
+      h2
+        margin: 0
+        text-align: center
+        text-shadow: 0 0 10px rgba(0,0,0,0.6)
+  
+  .sub-wrapper
+    position: relative
+    width: 100%
+    height: 29.3333%
+
+    ul
+      display: table
+      width: 100%
+      height: 100%
+      li
+        position: relative
+        display: table-cell
+        justify-content: center
+        table-layout: fixed
+        width: 25%
+        height: 100%
+        background-color: rgba(28,69,27,1)
+        // background-color: yellow
+        vertical-align: middle
+        text-align: center
+        background-blend-mode: darken
+        background-size: cover
+        background-position: center center
+        transition: all 0.3s ease
+        overflow: hidden
+
+        &:hover
+          background-color: rgba(184, 0, 54, 0)
+
+        &.day1
+          background-image: image-url('common/day1.jpg')
+        &.day2
+          background-image: image-url('common/day2.jpg')
+        &.day3
+          background-image: image-url('common/day3.jpg')
+        &.day4
+          background-image: image-url('common/day4.jpg')
+
+
+    h2
+      +fontsize(170)
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      margin: 0
+      color: rgba(255,255,255,0.3)
+      letter-spacing: 13px
+      // text-shadow: 0 0 20px rgba(128,128,128, 0.8)
+      .month
+        position: absolute
+        top: -58px
+        left: -18px
+      .bar
+        width: 6%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        transform: skewX(180deg)
+        background-color: rgba(255,255,255,0.3)
+      .day
+        position: absolute
+        bottom: -58px
+        right: -18px
+    p
+      +fontsize(24)
+      margin: 0
+      margin-top: 10px
+      color: white
+      font-family: $FAMILY_ShareTech 
+      letter-spacing: 2px
+      font-weight: 300
+    a
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
