@@ -111,9 +111,18 @@ activate :autoprefixer do |config|
   config.ignore   = []
 end
 
-#rails-assets
-source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery'
-  gem 'rails-assets-normalize-css'
-  gem 'rails-assets-ua-parser-js'
+
+activate :deploy do |deploy|
+
+  deploy.build_before = true
+  deploy.method = :git
+  deploy.branch = 'gh-pages'
+  
 end
+
+# #rails-assets
+# source 'https://rails-assets.org' do
+#   gem 'rails-assets-jquery'
+#   gem 'rails-assets-normalize-css'
+#   gem 'rails-assets-ua-parser-js'
+# end

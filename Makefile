@@ -5,10 +5,13 @@ server: bundle
 build: bundle
 	bundle exec middleman build --verbose
 
+publish:
+	bundle exec middleman deploy
+
 clean:
 	rm -frv publish
 
 bundle:
 	bundle install --path vendor/bundle
 
-.PHONY: build, server, clean, bundle
+.PHONY: build, server, clean, bundle, deploy
