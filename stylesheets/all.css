@@ -769,3 +769,7 @@ html.article {
       font-size: 14rem;
       font-family: "Share Tech", sans-serif;
       text-align: right; }
+    /* line 62, /Users/mori/repo/arsreport2015/source/stylesheets/_pages/_article.sass */
+    html.article .right video {
+      width: 100%;
+      vertical-align: bottom; }
