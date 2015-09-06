@@ -19,13 +19,19 @@
       
   .right
     .inner
-      - images = Dir.glob(path+"/images/**.{jpg,png}")
+      - images = Dir.glob(path+"/images/**.{jpg,png,mp4}")
       - if images.size > 0
         - images.each do |img|
           - path_to = Pathname(img)
           - path_from = Pathname(source_dir + current_page.url)
           - relativePath = path_to.relative_path_from(path_from).to_s
-          = image_tag relativePath
+          - ext = File.extname(img)
+
+          - if ext == ".jpg" || ext == ".JPG"
+            = image_tag relativePath
+          - elsif ext == ".mp4"
+            video controls='true' preload='true' name="media"
+              source src="#{relativePath}" type="video/mp4"
       - else
         p.noImages
           | NO IMAGES
